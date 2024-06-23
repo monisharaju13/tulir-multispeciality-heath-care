@@ -1,0 +1,17 @@
+{
+  "name": "tulir_multispeciality_healthcare_backend",
+  "version": "1.0.0",
+  "description": "Backend server for TULIR MULTISPECIALITY HEALTH CARE website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - TULIR MULTISPECIALITY HEALTH CARE</title>
+    <link rel="stylesheet" href="styles.css">
+<script>
+        async function submitAppointment(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch('/api/appointments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Appointment booked successfully');
+                form.reset();
+            } else {
+                alert('Failed to book appointment');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Hospital Logo" class="logo">
+        <h3>TULIR MULTISPECIALITY HEALTH CARE</h3>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<marquee>Tulir Multispeciality Center, Komarapalayalam, Tamil Nadu. We are providing advanced Treatment and wound management in Salem and Erode Districts. Online booking for doctor appointments are available!! </marquee>
+        <section>
+             <h2>Book an Appointment</h2>
+             <div class="appointment-form-container">
+            <form onsubmit="submitAppointment(event)">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="Dr.Karthick Shanmugam">Dr.Karthick Shanmugam (Podiatrist)</option>
+                    <option value="DR.R.Elakkiarani Karthick">DR.R.Elakkiarani Karthick (Physician and Diabetologist)</option>
+		    <option value="Dr.U.Prabhakaran">Dr.U.Prabhakaran (Surgical Oncology)</option>
+                </select>
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <button type="submit">Book Appointment</button>
+            </form>
+           </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 TULIR MULTISPECIALITY HEALTH CARE. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
