@@ -103,15 +103,24 @@ form button:hover {
     background: #45a049;
 }
 
+
+main {
+    padding: 20px;
+    padding-bottom: 60px; /* Add padding to the bottom to ensure content doesn't go behind the footer */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
 footer {
     background: #04887a;
     color: white;
     text-align: center;
     padding: 1rem;
     position: fixed;
+    margin-top: 20px;
     width: 100%;
     bottom: 0;
 }
+
 section h2 {
     font-size: 24px;
     margin-bottom: 10px;
